@@ -11,7 +11,7 @@ def home(request):
     
     form = ContactForm()
 
-    return render(request, 'home.html', {
+    return render(request, "home.html", {
         "home_items": home_items,
         "about_item": about_item,
         "portfolio_items": portfolio_items,
@@ -24,10 +24,10 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your message has been sent successfully!")
+            messages.success(request, "Your message sent succesfully!")
             return redirect("home")
         else:
-            messages.error(request, "Please fill out the form correctly!")
+            messages.error(request, "Error!")
     else:
         form = ContactForm()
         
