@@ -228,7 +228,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <!-- Contact Form -->
-        <form method="POST" id="contact-form" class="php-email-form" action="{% url 'home' %}" data-aos="fade-up" data-aos-delay="200">
+        <form method="POST" id="contact-form" class="form-with-validation" action="{% url 'home' %}" data-aos="fade-up" data-aos-delay="200">
           {% csrf_token %} <!-- CSRF Token for security -->
 
           <div class="row gy-4">
@@ -288,6 +288,18 @@
   </div>
 
 </section><!-- /Contact Section -->
+
+<script>
+  const form = document.getElementById('contact-form');
+  const messageInput = document.getElementById('{{ form.message.id_for_label }}');
+
+  form.addEventListener('submit', function() {
+    // Təsdiq edilən mesaj göndərildikdən sonra textarea sahəsini təmizləyirik
+    setTimeout(() => {
+      messageInput.value = '';
+    }, 500);
+  });
+</script>
 
 <!-- JavaScript for handling form submission -->
 <script>
