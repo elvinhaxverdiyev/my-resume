@@ -122,7 +122,7 @@
       <div class="col-lg-4">
         <!-- Profil şəkilini əlavə edirik -->
         {% if about_item.profil_image %}
-          <img src="{{ about_item.profil_image.url }}" class="img-fluid" alt="Profil Şəkili">
+          <img src="{{ about_item.profil_image.url }}" class="img-fluid" alt="Profil Şəkili" style="border-radius: 15px;">
         {% else %}
           <img src="{% static 'path/to/default/image.jpg' %}" class="img-fluid" alt="Varsayılan Profil Şəkili"> <!-- Varsayılan şəkil -->
         {% endif %}
@@ -177,7 +177,7 @@
   <div class="row portfolio-container">
     {% for portfolio in portfolio_items %}
     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-      <img src="{{ portfolio.image.url }}" class="img-fluid" alt="{{ portfolio.title }}" style="margin-bottom: 15px;">
+      <img src="{{ portfolio.image.url }}" class="img-fluid" alt="{{ portfolio.title }}"style="margin-top: 25px; border-radius: 15px;">
       <div class="portfolio-info">
         <h4>{{ portfolio.title }}</h4>
         <p>{{ portfolio.description }}</p>
